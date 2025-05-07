@@ -1,5 +1,6 @@
 # 🛠 Proyecto Final - Capacitación React
 
+
 ## ⚠️ IMPORTANTE: PROHIBIDO USAR ChatGPT u otras IAs
 
 El objetivo principal de esta capacitación es **aprender a pensar como desarrolladores**: buscar documentación, leer, equivocarse y resolver problemas por cuenta propia. Las IAs como ChatGPT son útiles, pero como desarrolladores *trainee*, es fundamental desarrollar habilidades sólidas en la lectura de documentación y búsqueda en foros técnicos.
