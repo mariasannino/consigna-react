@@ -1,15 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { fetchCharacters } from "../../services/api";
 import "./Characters.css";
-const Characters = () => {
-  const [characters, setCharacters] = useState([]);
-  useEffect(() => {
-    async function getCharacters() {
-      const charactersData = await fetchCharacters();
-      setCharacters(charactersData);
-    }
-    getCharacters();
-  }, []);
+const Characters = ({ characters }) => {
   return (
     <div className="characters-container">
       {characters.map((character) => (

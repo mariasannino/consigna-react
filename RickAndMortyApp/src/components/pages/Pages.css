@@ -1,0 +1,34 @@
+.pages {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 2rem;
+}
+
+.arrow {
+  height: 6rem;
+}
+
+.nav {
+  background-color: rgb(16, 186, 110);
+  border: 1px solid rgb(16, 186, 110);
+  outline: none;
+}
+
+.nav:hover,
+.nav :active {
+  background-color: rgb(16, 186, 110);
+  border: 1px solid rgb(16, 186, 110);
+  padding-top: 20px;
+  outline: none;
+}
+
+.nav:focus {
+  outline: none;
+}
+
+p {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #9cf9b3;
+}
