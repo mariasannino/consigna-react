@@ -3,6 +3,7 @@ import morty from "../../assets/morty.png";
 import "./Header.css";
 import Pages from "../pages/pages";
 import Search from "../search/Search";
+
 export function Header({ setCharacters }) {
   return (
     <header className="main-header">
@@ -21,7 +22,7 @@ export function Header({ setCharacters }) {
         />
       </div>
       <div className="header-container2">
-        <Search></Search>
+        <Search setCharacters={setCharacters}></Search>
         <Pages setCharacters={setCharacters}></Pages>
       </div>
     </header>
