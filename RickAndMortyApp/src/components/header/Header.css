@@ -7,15 +7,6 @@
   overflow: hidden;
 }
 
-.logo {
-  height: 12rem;
-  transition: transform 0.3s;
-}
-
-.logo:hover {
-  transform: scale(1.1);
-}
-
 .header-container1 {
   width: 100%;
   display: flex;
@@ -31,16 +22,6 @@
   align-items: center;
 }
 
-.title {
-  font-size: 4rem;
-
-  transition: color 0.3s;
-}
-
-.title:hover {
-  color: #5b8938;
-}
-
 @media (max-width: 768px) {
   .main-header {
     flex-direction: column;
@@ -48,17 +29,7 @@
     padding: 1.6rem;
   }
 
-  .logo {
-    height: 8rem;
-  }
-
   .header-container {
     justify-content: center;
-  }
-
-  .title {
-    font-size: 2rem;
-
-    transition: color 0.3s;
   }
 }

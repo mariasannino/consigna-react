@@ -1,0 +1,14 @@
+.logo {
+  height: 12rem;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .logo {
+    height: 8rem;
+  }
+}

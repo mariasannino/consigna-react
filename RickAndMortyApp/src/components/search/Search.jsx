@@ -1,24 +1,25 @@
-import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import {
+  setPageNum,
+  searchCharacters,
+  setSearchQuery,
+} from "../../store/charactersSlice";
 import "./Search.css";
-import { fetchSearchFilter } from "../../services/api";
 
-function Search({ setCharacters }) {
-  let [search, setSearch] = useState("");
-  useEffect(() => {
-    async function getSearch() {
-      const data = await fetchSearchFilter(search);
-      setCharacters(data);
-    }
-    getSearch();
-  }, [search, setCharacters]);
+function Search() {
+  const dispatch = useDispatch();
+  const handleSearch = (e) => {
+    const value = e.target.value;
+    dispatch(setSearchQuery(value));
+    dispatch(setPageNum(1));
+    dispatch(searchCharacters({ name: value, pageNum: 1 }));
+  };
 
   return (
     <div className="disp">
       <form className="form">
         <input
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
+          onChange={handleSearch}
           placeholder="Search Characters ... "
           type="text"
         />

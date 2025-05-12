@@ -1,0 +1,67 @@
+.character-card {
+  background-color: #a2a2a2ba;
+  border: 3px solid rgb(16, 186, 110);
+  border-radius: 5%;
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+}
+
+.character-card h2 {
+  font-size: 2.3rem;
+  padding-top: 20px;
+  color: rgb(16, 186, 110);
+  font-weight: bold;
+}
+
+.character-card h3 {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.9rem;
+}
+
+.character-card h3 span {
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+.character-card .alive {
+  top: -20px;
+  font-size: 1.7rem;
+  right: 20px;
+  color: #fff;
+  border: 1px solid rgb(52, 155, 73);
+  position: absolute;
+  padding: 2px;
+  border-radius: 15%;
+  background-color: rgb(52, 155, 73);
+}
+
+.character-card .dead {
+  top: -20px;
+  font-size: 1.7rem;
+  right: 20px;
+  color: #fff;
+  border: 1px solid rgb(235, 46, 46);
+  position: absolute;
+  padding: 2px;
+  border-radius: 15%;
+  background-color: rgb(235, 46, 46);
+}
+
+.character-card .unknown {
+  top: -20px;
+  font-size: 1.7rem;
+  right: 20px;
+  color: #fff;
+  border: 1px solid rgb(209, 177, 37);
+  position: absolute;
+  padding: 2px;
+  border-radius: 15%;
+  background-color: rgb(209, 177, 37);
+}
+
+.character-card img {
+  border-radius: 5%;
+  height: 25rem;
+}

@@ -1,26 +1,32 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { fetchPages } from "../../services/api";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getCharactersByPage,
+  setPageNum,
+  searchCharacters,
+} from "../../store/charactersSlice";
 import right from "../../assets/right.png";
 import left from "../../assets/left.png";
 import "./Pages.css";
 
-function Pages({ setCharacters }) {
-  const [pageNum, setPageNum] = useState(1);
-
+function Pages() {
+  const dispatch = useDispatch();
+  const pageNum = useSelector((state) => state.characters.pageNum);
+  const SearchQuery = useSelector((state) => state.characters.SearchQuery);
   useEffect(() => {
-    async function getPage() {
-      const data = await fetchPages(pageNum);
-      setCharacters(data);
+    if (SearchQuery) {
+      dispatch(searchCharacters({ name: SearchQuery, pageNum }));
+    } else {
+      dispatch(getCharactersByPage(pageNum));
     }
-    getPage();
-  }, [pageNum, setCharacters]);
+  }, [pageNum, SearchQuery, dispatch]);
 
-  let next = () => {
-    setPageNum((num) => (num < 42 ? num + 1 : 42));
+  const next = () => {
+    dispatch(setPageNum(pageNum < 42 ? pageNum + 1 : 42));
   };
-  let prev = () => {
-    setPageNum((num) => (num > 1 ? num - 1 : 1));
+  const prev = () => {
+    dispatch(setPageNum(pageNum > 1 ? pageNum - 1 : 1));
   };
   return (
     <div className="pages">

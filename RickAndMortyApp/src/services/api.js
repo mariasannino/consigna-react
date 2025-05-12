@@ -17,9 +17,9 @@ export async function fetchPages(pageNum) {
 }
 
 //To find in the searchBar by name
-export async function fetchSearchFilter(name) {
+export async function fetchSearchFilter(name, pageNum) {
   const response = await fetch(
-    `https://rickandmortyapi.com/api/character?page=1&name=${name}`
+    `https://rickandmortyapi.com/api/character?page=${pageNum}&name=${name}`
   );
   const data = await response.json();
   return data.results;
