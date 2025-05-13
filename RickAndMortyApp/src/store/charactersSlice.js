@@ -37,6 +37,7 @@ const charactersSlice = createSlice({
     characters: [],
     pageNum: 1,
     searchQuery: "",
+    totalPages: 1,
   },
   reducers: {
     setPageNum: (state, action) => {
@@ -49,15 +50,18 @@ const charactersSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getCharacters.fulfilled, (state, action) => {
-        state.characters = action.payload;
+        state.characters = action.payload.results;
+        state.totalPages = action.payload.info.pages;
       })
 
       .addCase(getCharactersByPage.fulfilled, (state, action) => {
-        state.characters = action.payload;
+        state.characters = action.payload.results;
+        state.totalPages = action.payload.info.pages;
       })
 
       .addCase(searchCharacters.fulfilled, (state, action) => {
-        state.characters = action.payload;
+        state.characters = action.payload.results;
+        state.totalPages = action.payload.info.pages;
       });
   },
 });

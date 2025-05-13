@@ -1,41 +1,28 @@
-import React from "react";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  getCharactersByPage,
-  setPageNum,
-  searchCharacters,
-} from "../../store/charactersSlice";
+import usePagesLogic from "../../hooks/usePagesLogic";
 import right from "../../assets/right.png";
 import left from "../../assets/left.png";
 import "./Pages.css";
 
 function Pages() {
-  const dispatch = useDispatch();
-  const pageNum = useSelector((state) => state.characters.pageNum);
-  const SearchQuery = useSelector((state) => state.characters.SearchQuery);
-  useEffect(() => {
-    if (SearchQuery) {
-      dispatch(searchCharacters({ name: SearchQuery, pageNum }));
-    } else {
-      dispatch(getCharactersByPage(pageNum));
-    }
-  }, [pageNum, SearchQuery, dispatch]);
+  const { pageNum, totalPages, goToNextPage, goToPrevPage, fetchPage } =
+    usePagesLogic();
 
-  const next = () => {
-    dispatch(setPageNum(pageNum < 42 ? pageNum + 1 : 42));
-  };
-  const prev = () => {
-    dispatch(setPageNum(pageNum > 1 ? pageNum - 1 : 1));
-  };
+  useEffect(() => {
+    fetchPage();
+  }, [fetchPage]);
+
   return (
     <div className="pages">
-      <button className="nav" onClick={prev}>
+      <button className="nav" onClick={goToPrevPage}>
         <img className="arrow" src={left} />
       </button>
       <p>{pageNum}</p>
-      <button className="nav" onClick={next}>
-        {" "}
+      <button
+        className="nav"
+        onClick={goToNextPage}
+        disabled={pageNum >= totalPages}
+      >
         <img className="arrow" src={right} />
       </button>
     </div>
