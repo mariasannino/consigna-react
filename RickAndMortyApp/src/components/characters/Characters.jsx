@@ -13,7 +13,7 @@ const Characters = () => {
       </div>
     );
   }
-
+  console.log("characters", characters);
   return (
     <div className="characters-container">
       {characters.map((character) => (

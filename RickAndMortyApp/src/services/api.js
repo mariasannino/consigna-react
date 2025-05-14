@@ -31,3 +31,39 @@ export async function fetchSearchFilter(name, pageNum) {
     return { results: [], info: { pages: 1 } };
   }
 }
+
+//TO FILTER STATUS
+export async function fetchStatusFilter(status, pageNum) {
+  const response = await fetch(
+    `https://rickandmortyapi.com/api/character/?page=${pageNum}&status=${status}`
+  );
+  const data = await response.json();
+  console.log(data);
+  return data;
+}
+
+//fetch all filters together to make it easy
+
+export async function fetchFilteredCharacters({
+  name,
+  status,
+  gender,
+  species,
+  pageNum,
+}) {
+  let url = `https://rickandmortyapi.com/api/character/?page=${pageNum}`;
+  if (name) url += `&name=${name}`;
+  if (status) url += `&status=${status}`;
+  if (gender) url += `&gender=${gender}`;
+  if (species) url += `&species=${species}`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) return { results: [], info: { pages: 1 } };
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Combined filter fetch failed:", error);
+    return { results: [], info: { pages: 1 } };
+  }
+}
