@@ -16,13 +16,6 @@
   margin-top: 0;
 }
 
-h2 {
-  color: #3173de;
-  cursor: pointer;
-  text-decoration: underline;
-  font-size: 3rem;
-}
-
 .filter-btn {
   margin: 0.5rem;
   padding: 0.5rem 1rem;

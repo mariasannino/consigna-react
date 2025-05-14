@@ -12,7 +12,6 @@ export default function Filters() {
         <Gender />
         <Species />
         <Status />
-        <h2>Remove items</h2>
       </div>
     </div>
   );
