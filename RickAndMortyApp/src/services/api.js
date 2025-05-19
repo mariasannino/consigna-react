@@ -67,3 +67,12 @@ export async function fetchFilteredCharacters({
     return { results: [], info: { pages: 1 } };
   }
 }
+
+//episodes pages
+export async function fetchEpisodesByPage(pageNum) {
+  const response = await fetch(
+    `https://rickandmortyapi.com/api/episode?page=${pageNum}`
+  );
+  const data = await response.json();
+  return data;
+}

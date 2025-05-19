@@ -1,27 +1,23 @@
 import "./App.css";
-import Characters from "./components/characters/Characters";
-import Filters from "./components/filters/Filters";
-import Header from "./components/header/Header";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { getCharacters } from "./store/charactersSlice";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Episodes from "./pages/Episodes";
+import Locations from "./pages/Locations";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import EpisodeDetail from "./components/episode/EpisodeDetail";
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getCharacters());
-  }, [dispatch]);
-
   return (
-    <>
-      <Header></Header>
-
-      <div className="container">
-        <Filters></Filters>
-        <Characters></Characters>
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/episodes" element={<Episodes />} />
+          <Route path="/locations" element={<Locations />} />
+          <Route path="/episodes/:id" element={<EpisodeDetail />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
