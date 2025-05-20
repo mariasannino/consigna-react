@@ -76,3 +76,34 @@ export async function fetchEpisodesByPage(pageNum) {
   const data = await response.json();
   return data;
 }
+
+export async function fetchEpisodesById(id) {
+  const response = await fetch(`https://rickandmortyapi.com/api/episode/${id}`);
+  const data = await response.json();
+  return data;
+}
+
+export async function fetchCharactersFromEpisodes(urls) {
+  const ids = urls.map((url) => url.split("/").pop()).join(",");
+  const response = await fetch(
+    `https://rickandmortyapi.com/api/character/${ids}`
+  );
+
+  const data = await response.json();
+  return Array.isArray(data) ? data : [data];
+}
+
+export async function fetchSearchFilterEpisodes(name, pageNum) {
+  try {
+    const response = await fetch(
+      `https://rickandmortyapi.com/api/episode?page=${pageNum}&name=${name}`
+    );
+
+    if (!response.ok) return { results: [], info: { pages: 1 } };
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Search failed:", error);
+    return { results: [], info: { pages: 1 } };
+  }
+}

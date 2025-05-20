@@ -1,44 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getEpisodeDetail,
+  clearEpisodeDetail,
+} from "../../store/episodesSlice";
 import Character from "../character/character";
 import "./Episode.css";
 
 const EpisodeDetail = () => {
   const { id } = useParams();
-  const [episode, setEpisode] = useState(null);
-  const [characters, setCharacters] = useState([]);
+  const dispatch = useDispatch();
 
+  const { episodeDetail, episodeCharacters } = useSelector(
+    (state) => state.episodes
+  );
   useEffect(() => {
-    const fetchEpisode = async () => {
-      const res = await fetch(`https://rickandmortyapi.com/api/episode/${id}`);
-      const data = await res.json();
-      setEpisode(data);
+    dispatch(getEpisodeDetail(id));
 
-      const characterData = await Promise.all(
-        data.characters.map((url) => fetch(url).then((res) => res.json()))
-      );
-      setCharacters(characterData);
-    };
+    return () => dispatch(clearEpisodeDetail());
+  }, [dispatch, id]);
 
-    fetchEpisode();
-  }, [id]);
-
-  if (!episode) return <p>Loading...</p>;
+  if (!episodeDetail)
+    return <p className="loading">Loading episode details...</p>;
 
   return (
     <div>
       <div className="title-container">
-        <h1>{episode.name}</h1>
+        <h1>{episodeDetail.name}</h1>
         <p>
-          <strong>Air Date:</strong> {episode.air_date}
+          <strong>Air Date:</strong> {episodeDetail.air_date}
         </p>
         <p>
-          <strong>Episode:</strong> {episode.episode}
+          <strong>Episode:</strong> {episodeDetail.episode}
         </p>
       </div>
 
       <div className="characters-container">
-        {characters.map((char) => (
+        {episodeCharacters.map((char) => (
           <Character key={char.id} character={char} />
         ))}
       </div>

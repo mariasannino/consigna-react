@@ -1,29 +1,46 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
-  setPageNum,
-  setSearchQuery,
+  setPageNum as setCharacterPageNum,
+  setSearchQuery as setCharacterSearchQuery,
   filterCharacters,
 } from "../store/charactersSlice";
+import {
+  setEpisodePageNum,
+  setSearchQuery as setEpisodeSearchQuery,
+  searchEpisodes,
+} from "../store/episodesSlice";
 
-const useSearchLogic = () => {
+const useSearchLogic = (context = "characters") => {
   const dispatch = useDispatch();
 
-  const status = useSelector((state) => state.characters.status);
-  const gender = useSelector((state) => state.characters.gender);
-  const species = useSelector((state) => state.characters.species);
+  const status = useSelector((state) =>
+    context === "characters" ? state.characters.status : ""
+  );
+  const gender = useSelector((state) =>
+    context === "characters" ? state.characters.gender : ""
+  );
+  const species = useSelector((state) =>
+    context === "characters" ? state.characters.species : ""
+  );
 
   const handleSearchInput = (value) => {
-    dispatch(setSearchQuery(value));
-    dispatch(setPageNum(1));
-    dispatch(
-      filterCharacters({
-        name: value,
-        status,
-        gender,
-        species,
-        pageNum: 1,
-      })
-    );
+    if (context === "characters") {
+      dispatch(setCharacterSearchQuery(value));
+      dispatch(setCharacterPageNum(1));
+      dispatch(
+        filterCharacters({
+          name: value,
+          status,
+          gender,
+          species,
+          pageNum: 1,
+        })
+      );
+    } else if (context === "episodes") {
+      dispatch(setEpisodeSearchQuery(value));
+      dispatch(setEpisodePageNum(1));
+      dispatch(searchEpisodes({ name: value, pageNum: 1 }));
+    }
   };
   return { handleSearchInput };
 };

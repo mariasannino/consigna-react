@@ -48,3 +48,10 @@
 .title-container strong {
   color: #2c7249;
 }
+
+.loading {
+  display: flex;
+  font-size: 2rem;
+  padding: 2rem;
+  color: #2c7249;
+}

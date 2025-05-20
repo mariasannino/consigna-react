@@ -1,12 +1,22 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import usePagesLogic from "../../hooks/usePagesLogic";
 import right from "../../assets/right.png";
 import left from "../../assets/left.png";
 import "./Pages.css";
 
 function Pages() {
+  const location = useLocation();
+
+  let context = "characters";
+  if (location.pathname.includes("episodes")) {
+    context = "episodes";
+  } else if (location.pathname.includes("locations")) {
+    context = "locations";
+  }
+
   const { pageNum, totalPages, goToNextPage, goToPrevPage, fetchPage } =
-    usePagesLogic();
+    usePagesLogic(context);
 
   useEffect(() => {
     fetchPage();
