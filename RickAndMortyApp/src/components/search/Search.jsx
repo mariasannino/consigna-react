@@ -1,17 +1,9 @@
 import useSearchLogic from "../../hooks/useSearchLogic";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+
 import "./Search.css";
 
 function Search() {
-  const location = useLocation();
-
-  let context = "characters";
-  if (location.pathname.includes("episodes")) {
-    context = "episodes";
-  } else if (location.pathname.includes("locations")) {
-    context = "locations";
-  }
   const { handleSearchInput } = useSearchLogic();
   const [inputValue, setInputValue] = useState("");
 

@@ -1,0 +1,50 @@
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getLocationDetail,
+  clearLocationDetail,
+} from "../../store/locationsSlice";
+import Character from "../character/character";
+import "./Location.css";
+
+const LocationDetail = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+
+  const { locationDetail, locationCharacters } = useSelector(
+    (state) => state.locations
+  );
+
+  useEffect(() => {
+    dispatch(getLocationDetail(id));
+    return () => dispatch(clearLocationDetail());
+  }, [dispatch, id]);
+
+  if (!locationDetail)
+    return <p className="loading">Loading location details...</p>;
+
+  return (
+    <div>
+      <div className="title-container">
+        <h1>{locationDetail.name}</h1>
+        <p>
+          <strong>Type:</strong> {locationDetail.type}
+        </p>
+        <p>
+          <strong>Dimension:</strong> {locationDetail.dimension}
+        </p>
+      </div>
+
+      <div className="characters-container">
+        {locationCharacters
+          .filter((char) => char && char.id)
+          .map((char) => (
+            <Character key={char.id} character={char} />
+          ))}
+      </div>
+    </div>
+  );
+};
+
+export default LocationDetail;

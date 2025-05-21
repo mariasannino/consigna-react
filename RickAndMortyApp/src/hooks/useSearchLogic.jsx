@@ -9,9 +9,18 @@ import {
   setSearchQuery as setEpisodeSearchQuery,
   searchEpisodes,
 } from "../store/episodesSlice";
+import { useLocation } from "react-router-dom";
 
-const useSearchLogic = (context = "characters") => {
+const useSearchLogic = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
+
+  let context = "characters";
+  if (location.pathname.includes("episodes")) {
+    context = "episodes";
+  } else if (location.pathname.includes("locations")) {
+    context = "locations";
+  }
 
   const status = useSelector((state) =>
     context === "characters" ? state.characters.status : ""
