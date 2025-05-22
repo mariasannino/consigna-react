@@ -4,11 +4,18 @@ import {
   setSearchQuery as setCharacterSearchQuery,
   filterCharacters,
 } from "../store/charactersSlice";
+
 import {
   setEpisodePageNum,
   setSearchQuery as setEpisodeSearchQuery,
   searchEpisodes,
 } from "../store/episodesSlice";
+
+import {
+  setLocationPageNum,
+  setSearchQuery as setLocationSearchQuery,
+  searchLocations,
+} from "../store/locationsSlice";
 import { useLocation } from "react-router-dom";
 
 const useSearchLogic = () => {
@@ -49,6 +56,10 @@ const useSearchLogic = () => {
       dispatch(setEpisodeSearchQuery(value));
       dispatch(setEpisodePageNum(1));
       dispatch(searchEpisodes({ name: value, pageNum: 1 }));
+    } else if (context === "locations") {
+      dispatch(setLocationSearchQuery(value));
+      dispatch(setLocationPageNum(1));
+      dispatch(searchLocations({ name: value, pageNum: 1 }));
     }
   };
   return { handleSearchInput };

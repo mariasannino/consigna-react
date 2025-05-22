@@ -1,31 +1,63 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import {
   setPageNum as setCharacterPageNum,
   getCharactersByPage,
   filterCharacters,
 } from "../store/charactersSlice";
+
 import {
   setEpisodePageNum,
   getEpisodesByPage,
   searchEpisodes,
 } from "../store/episodesSlice";
 
-const usePagesLogic = (context = "characters") => {
+import {
+  setLocationPageNum,
+  getLocationByPage,
+  searchLocations,
+} from "../store/locationsSlice";
+
+const usePagesLogic = () => {
   const dispatch = useDispatch();
-  const pageNum = useSelector((state) =>
-    context === "characters" ? state.characters.pageNum : state.episodes.pageNum
-  );
-  const totalPages = useSelector((state) =>
-    context === "characters"
-      ? state.characters.totalPages
-      : state.episodes.totalPages
-  );
-  const searchQuery = useSelector((state) =>
-    context === "characters"
-      ? state.characters.searchQuery
-      : state.episodes.searchQuery
-  );
+  const location = useLocation();
+
+  let context = "characters";
+  if (location.pathname.includes("episodes")) {
+    context = "episodes";
+  } else if (location.pathname.includes("locations")) {
+    context = "locations";
+  }
+  const pageNum = useSelector((state) => {
+    if (context === "characters") {
+      return state.characters.pageNum;
+    } else if (context === "episodes") {
+      return state.episodes.pageNum;
+    } else {
+      return state.locations.pageNum;
+    }
+  });
+
+  const totalPages = useSelector((state) => {
+    if (context === "characters") {
+      return state.characters.totalPages;
+    } else if (context === "episodes") {
+      return state.episodes.totalPages;
+    } else {
+      return state.locations.totalPages;
+    }
+  });
+  const searchQuery = useSelector((state) => {
+    if (context === "characters") {
+      return state.characters.searchQuery;
+    } else if (context === "episodes") {
+      return state.episodes.searchQuery;
+    } else {
+      return state.locations.searchQuery;
+    }
+  });
   const status = useSelector((state) =>
     context === "characters" ? state.characters.status : ""
   );
@@ -62,6 +94,12 @@ const usePagesLogic = (context = "characters") => {
       } else {
         dispatch(getEpisodesByPage(pageNum));
       }
+    } else if (context === "locations") {
+      if (searchQuery.trim() !== "") {
+        dispatch(searchLocations({ name: searchQuery, pageNum }));
+      } else {
+        dispatch(getLocationByPage(pageNum));
+      }
     }
   }, [
     dispatch,
@@ -80,21 +118,25 @@ const usePagesLogic = (context = "characters") => {
 
   const goToNextPage = () => {
     if (pageNum < totalPages) {
-      dispatch(
-        context === "characters"
-          ? setCharacterPageNum(pageNum + 1)
-          : setEpisodePageNum(pageNum + 1)
-      );
+      if (context === "characters") {
+        dispatch(setCharacterPageNum(pageNum + 1));
+      } else if (context === "episodes") {
+        dispatch(setEpisodePageNum(pageNum + 1));
+      } else {
+        dispatch(setLocationPageNum(pageNum + 1));
+      }
     }
   };
 
   const goToPrevPage = () => {
     if (pageNum > 1) {
-      dispatch(
-        context === "characters"
-          ? setCharacterPageNum(pageNum - 1)
-          : setEpisodePageNum(pageNum - 1)
-      );
+      if (context === "characters") {
+        dispatch(setCharacterPageNum(pageNum - 1));
+      } else if (context === "episodes") {
+        dispatch(setEpisodePageNum(pageNum - 1));
+      } else {
+        dispatch(setLocationPageNum(pageNum - 1));
+      }
     }
   };
 

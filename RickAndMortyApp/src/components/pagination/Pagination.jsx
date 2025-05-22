@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import usePagesLogic from "../../hooks/usePagesLogic";
 import right from "../../assets/right.png";
 import left from "../../assets/left.png";
-import "./Pages.css";
+import "./Pagination.css";
 
 function Pages() {
   const location = useLocation();

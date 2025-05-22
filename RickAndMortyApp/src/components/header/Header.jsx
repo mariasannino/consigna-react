@@ -2,7 +2,7 @@ import rick from "../../assets/rick.png";
 import morty from "../../assets/morty.png";
 import "./Header.css";
 
-import Pages from "../pages/pages";
+import Pages from "../pagination/Pagination";
 import Search from "../search/Search";
 import Title from "../title/title";
 import Logo from "../logo/Logo";

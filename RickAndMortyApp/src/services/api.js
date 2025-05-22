@@ -1,7 +1,7 @@
 //to fetch the first page
 export async function fetchCharacters() {
   const response = await fetch(
-    "https://rickandmortyapi.com/api/character?page=1" //esta en page 2 posar en page 1 quan canviem
+    "https://rickandmortyapi.com/api/character?page=1"
   );
   const data = await response.json();
   return data;
@@ -138,7 +138,7 @@ export async function fetchCharactersFromLocations(urls) {
 export async function fetchSearchFilterLocation(name, pageNum) {
   try {
     const response = await fetch(
-      `https://rickandmortyapi.com/api/episode?page=${pageNum}&name=${name}`
+      `https://rickandmortyapi.com/api/location?page=${pageNum}&name=${name}`
     );
 
     if (!response.ok) return { results: [], info: { pages: 1 } };
