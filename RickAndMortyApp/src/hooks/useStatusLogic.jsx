@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useCallback } from "react";
+
 import {
   setStatus,
   setPageNum,
   filterCharacters,
 } from "../store/charactersSlice";
-import { useCallback } from "react";
 
 function useStatusLogic() {
   const dispatch = useDispatch();

@@ -7,6 +7,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import EpisodeDetail from "./components/episode/EpisodeDetail";
 import LocationDetail from "./components/location/locationDetails";
+
 function App() {
   return (
     <BrowserRouter>

@@ -1,20 +1,10 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import usePagesLogic from "../../hooks/usePagesLogic";
 import right from "../../assets/right.png";
 import left from "../../assets/left.png";
 import "./Pagination.css";
 
-function Pages() {
-  const location = useLocation();
-
-  let context = "characters";
-  if (location.pathname.includes("episodes")) {
-    context = "episodes";
-  } else if (location.pathname.includes("locations")) {
-    context = "locations";
-  }
-
+function Pages({ context }) {
   const { pageNum, totalPages, goToNextPage, goToPrevPage, fetchPage } =
     usePagesLogic(context);
 
@@ -40,4 +30,3 @@ function Pages() {
 }
 
 export default Pages;
-//icon author :<a href="https://www.flaticon.com/free-icons/arrows" title="arrows icons">Arrows icons created by Freepik - Flaticon</a>

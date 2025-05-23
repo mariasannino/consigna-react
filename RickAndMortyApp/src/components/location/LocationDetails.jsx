@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
   getLocationDetail,
   clearLocationDetail,
 } from "../../store/locationsSlice";
+
 import Character from "../character/character";
 import "./Location.css";
 
