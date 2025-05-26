@@ -1,23 +1,17 @@
 import useStatusLogic from "../../../hooks/useStatusLogic";
-import "./category.css";
+import FilterGroup from "../FilterGroup";
 
 function Status() {
   const { selected, handleClick } = useStatusLogic();
-  let statusOptions = ["alive", "dead", "unknown"];
+  const statusOptions = ["alive", "dead", "unknown"];
 
   return (
-    <div className="filter">
-      <h1 className="filter-title">Status</h1>
-      {statusOptions.map((item, index) => (
-        <button
-          key={index}
-          className={selected === item ? " filter-btn selected" : "filter-btn"}
-          onClick={() => handleClick(item)}
-        >
-          {item}
-        </button>
-      ))}
-    </div>
+    <FilterGroup
+      title="Status"
+      options={statusOptions}
+      selected={selected}
+      onSelect={handleClick}
+    />
   );
 }
 

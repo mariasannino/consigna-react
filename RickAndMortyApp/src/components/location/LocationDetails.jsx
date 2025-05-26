@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
 import {
   getLocationDetail,
   clearLocationDetail,
 } from "../../store/locationsSlice";
-
 import Character from "../character/character";
+import Info from "../info/Info";
 import "./Location.css";
 
 const LocationDetail = () => {
@@ -30,12 +29,8 @@ const LocationDetail = () => {
     <div>
       <div className="title-container">
         <h1>{locationDetail.name}</h1>
-        <p>
-          <strong>Type:</strong> {locationDetail.type}
-        </p>
-        <p>
-          <strong>Dimension:</strong> {locationDetail.dimension}
-        </p>
+        <Info label="Type" value={locationDetail.type} />
+        <Info label="Dimension" value={locationDetail.dimension} />
       </div>
 
       <div className="characters-container">

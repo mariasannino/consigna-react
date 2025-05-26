@@ -6,6 +6,7 @@ import {
   clearEpisodeDetail,
 } from "../../store/episodesSlice";
 import Character from "../character/character";
+import Info from "../info/Info";
 import "./Episode.css";
 
 const EpisodeDetail = () => {
@@ -28,12 +29,8 @@ const EpisodeDetail = () => {
     <div>
       <div className="title-container">
         <h1>{episodeDetail.name}</h1>
-        <p>
-          <strong>Air Date:</strong> {episodeDetail.air_date}
-        </p>
-        <p>
-          <strong>Episode:</strong> {episodeDetail.episode}
-        </p>
+        <Info label="Air Date" value={episodeDetail.air_date} />
+        <Info label="Episode" value={episodeDetail.episode} />
       </div>
 
       <div className="characters-container">

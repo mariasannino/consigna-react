@@ -4,31 +4,3 @@
   gap: 1rem;
   align-items: center;
 }
-
-.no-result {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.no-result p {
-  color: rgb(16, 186, 110);
-  margin-left: 1rem;
-  font-size: 4rem;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.no-result p:hover {
-  color: #5b8938;
-}
-
-.no-result img {
-  transition: transform 0.3s;
-}
-
-.no-result img:hover {
-  transform: scale(1.1);
-}
