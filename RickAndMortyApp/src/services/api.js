@@ -149,3 +149,19 @@ export async function fetchSearchFilterLocation(name, pageNum) {
     return { results: [], info: { pages: 1 } };
   }
 }
+
+export async function fetchFilteredLocations({ name, type, pageNum }) {
+  let url = `https://rickandmortyapi.com/api/location/?page=${pageNum}`;
+  if (name) url += `&name=${name}`;
+  if (type) url += `&type=${type}`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) return { results: [], info: { pages: 1 } };
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Combined filter fetch failed:", error);
+    return { results: [], info: { pages: 1 } };
+  }
+}

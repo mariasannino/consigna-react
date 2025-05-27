@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getLocationByPage, searchLocations } from "../store/locationsSlice";
-import Location from "../components/location/location";
+import Location from "../components/location/Location";
 import sad from "../assets/sad.png";
-
+import Filters from "../components/filters/Filters";
 const Locations = () => {
   const dispatch = useDispatch();
   const { locations, pageNum, searchQuery } = useSelector(
@@ -28,10 +28,13 @@ const Locations = () => {
   }
 
   return (
-    <div className="locations-container">
-      {locations.map((location) => (
-        <Location key={location.id} location={location} />
-      ))}
+    <div className="container">
+      <Filters></Filters>
+      <div className="locations-container">
+        {locations.map((location) => (
+          <Location key={location.id} location={location} />
+        ))}
+      </div>
     </div>
   );
 };

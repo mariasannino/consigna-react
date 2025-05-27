@@ -17,6 +17,7 @@
 .locations-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  padding: 2rem;
+  gap: 2rem;
+  padding: 4rem;
+  align-items: start;
 }

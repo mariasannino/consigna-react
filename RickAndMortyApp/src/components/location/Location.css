@@ -1,8 +1,8 @@
 .location-card {
   background-color: #a2a2a2ba;
-  border: 3px solid rgb(16, 186, 110);
-  border-radius: 10px;
-  padding: 1rem;
+  border: 2px solid rgb(16, 186, 110);
+  border-radius: 5%;
+  padding: 1.5rem;
   text-align: center;
   text-decoration: none;
   color: inherit;
@@ -59,4 +59,19 @@
 
 img {
   height: 15rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #10ba6e;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.location-card img {
+  border-radius: 5%;
+  height: 25rem;
 }

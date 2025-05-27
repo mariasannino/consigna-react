@@ -17,7 +17,7 @@ import {
 import {
   setLocationPageNum,
   getLocationByPage,
-  searchLocations,
+  filterLocations,
 } from "../store/locationsSlice";
 
 const usePagesLogic = () => {
@@ -68,14 +68,23 @@ const usePagesLogic = () => {
     context === "characters" ? state.characters.species : ""
   );
 
-  const hasAnyFilter =
-    context === "characters"
-      ? searchQuery.trim() !== "" || status || gender || species
-      : searchQuery.trim() !== "";
+  const type = useSelector((state) =>
+    context === "locations" ? state.locations.type : ""
+  );
+
+  const hasAnyFilter = useCallback(() => {
+    if (context === "characters") {
+      return searchQuery.trim() !== "" || status || gender || species;
+    } else if (context === "locations") {
+      return searchQuery.trim() !== "" || type;
+    } else {
+      return searchQuery.trim() !== "";
+    }
+  }, [context, searchQuery, status, gender, species, type]);
 
   const fetchPage = useCallback(() => {
     if (context === "characters") {
-      if (hasAnyFilter) {
+      if (hasAnyFilter()) {
         dispatch(
           filterCharacters({
             name: searchQuery,
@@ -89,14 +98,14 @@ const usePagesLogic = () => {
         dispatch(getCharactersByPage(pageNum));
       }
     } else if (context === "episodes") {
-      if (searchQuery.trim() !== "") {
+      if (hasAnyFilter()) {
         dispatch(searchEpisodes({ name: searchQuery, pageNum }));
       } else {
         dispatch(getEpisodesByPage(pageNum));
       }
     } else if (context === "locations") {
-      if (searchQuery.trim() !== "") {
-        dispatch(searchLocations({ name: searchQuery, pageNum }));
+      if (hasAnyFilter()) {
+        dispatch(filterLocations({ name: searchQuery, type, pageNum }));
       } else {
         dispatch(getLocationByPage(pageNum));
       }
@@ -110,6 +119,7 @@ const usePagesLogic = () => {
     gender,
     species,
     hasAnyFilter,
+    type,
   ]);
 
   useEffect(() => {

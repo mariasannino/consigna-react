@@ -1,9 +1,9 @@
 import useSpeciesLogic from "../../../hooks/useSpeciesLogic";
-import FilterGroup from "../FilterGroup";
+import "./category.css";
 
 function Species() {
   const { selected, handleClick } = useSpeciesLogic();
-  const species = [
+  let species = [
     "human",
     "alien",
     "humanoid",
@@ -18,12 +18,18 @@ function Species() {
   ];
 
   return (
-    <FilterGroup
-      title="Species"
-      options={species}
-      selected={selected}
-      onSelect={handleClick}
-    />
+    <div className="filter">
+      <h1 className="filter-title">Species</h1>
+      {species.map((item, index) => (
+        <button
+          key={index}
+          className={selected === item ? " filter-btn selected" : "filter-btn"}
+          onClick={() => handleClick(item)}
+        >
+          {item}
+        </button>
+      ))}
+    </div>
   );
 }
 

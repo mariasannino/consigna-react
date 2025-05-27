@@ -5,6 +5,7 @@ import {
   fetchLocationById,
   fetchCharactersFromLocations,
   fetchSearchFilterLocation,
+  fetchFilteredLocations,
 } from "../services/api";
 
 export const getLocationByPage = createAsyncThunk(
@@ -32,6 +33,18 @@ export const searchLocations = createAsyncThunk(
   }
 );
 
+export const filterLocations = createAsyncThunk(
+  "locations/filterLocations",
+  async ({ name, type, pageNum }) => {
+    const locations = await fetchFilteredLocations({
+      name,
+      type,
+      pageNum,
+    });
+    return locations;
+  }
+);
+
 const locationsSlice = createSlice({
   name: "locations",
   initialState: {
@@ -41,6 +54,7 @@ const locationsSlice = createSlice({
     locationDetail: null,
     locationCharacters: [],
     searchQuery: "",
+    type: "",
   },
   reducers: {
     setLocationPageNum: (state, action) => {
@@ -54,6 +68,10 @@ const locationsSlice = createSlice({
     clearLocationDetail: (state) => {
       state.locationDetail = null;
       state.locationCharacters = [];
+    },
+
+    setType: (state, action) => {
+      state.type = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -72,11 +90,20 @@ const locationsSlice = createSlice({
       .addCase(getLocationDetail.fulfilled, (state, action) => {
         state.locationDetail = action.payload.location;
         state.locationCharacters = action.payload.characters;
+      })
+
+      .addCase(filterLocations.fulfilled, (state, action) => {
+        state.locations = action.payload.results;
+        state.totalPages = action.payload.info.pages;
       });
   },
 });
 
-export const { setLocationPageNum, setSearchQuery, clearLocationDetail } =
-  locationsSlice.actions;
+export const {
+  setLocationPageNum,
+  setSearchQuery,
+  clearLocationDetail,
+  setType,
+} = locationsSlice.actions;
 
 export default locationsSlice;

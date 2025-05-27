@@ -14,7 +14,7 @@ import {
 import {
   setLocationPageNum,
   setSearchQuery as setLocationSearchQuery,
-  searchLocations,
+  filterLocations,
 } from "../store/locationsSlice";
 import { useLocation } from "react-router-dom";
 
@@ -39,6 +39,10 @@ const useSearchLogic = () => {
     context === "characters" ? state.characters.species : ""
   );
 
+  const type = useSelector((state) =>
+    context === "locations" ? state.locations.type : ""
+  );
+
   const handleSearchInput = (value) => {
     if (context === "characters") {
       dispatch(setCharacterSearchQuery(value));
@@ -59,7 +63,7 @@ const useSearchLogic = () => {
     } else if (context === "locations") {
       dispatch(setLocationSearchQuery(value));
       dispatch(setLocationPageNum(1));
-      dispatch(searchLocations({ name: value, pageNum: 1 }));
+      dispatch(filterLocations({ name: value, type, pageNum: 1 }));
     }
   };
   return { handleSearchInput };
