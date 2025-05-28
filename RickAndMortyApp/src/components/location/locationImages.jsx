@@ -38,6 +38,26 @@ import Signus5_Expanse from "../../assets/locations/Signus5_Expanse.jpg";
 import Testicle_Monster_Dimension from "../../assets/locations/Testicle_Monster_Dimension.jpg";
 import The_Managerie from "../../assets/locations/The_Managerie.jpg";
 import Unitys_Planet from "../../assets/locations/Unitys_Planet.jpg";
+import Alphabetrium from "../../assets/locations/Alphabetrium.jpg";
+import Earth_D99 from "../../assets/locations/Earth_(D-99).jpg";
+import Earth_D716 from "../../assets/locations/Earth_(D716).jpg";
+import Earth_D716B from "../../assets/locations/Earth_(D716-B).jpg";
+import Earth_Giant_Telepathic_Spiders_Dimension from "../../assets/locations/Earth_(Giant_Telepathic_Spiders_Dimension).jpg";
+import Earth_K22 from "../../assets/locations/Earth_(K-22).jpg";
+import Fantasy_World from "../../assets/locations/Fantasy_World.jpg";
+import Gear_World from "../../assets/locations/Gear_World.jpg";
+import Hamster_in_Butt_World from "../../assets/locations/Hamster_in_Butt_World.jpg";
+import Jerryboree from "../../assets/locations/Jerryboree.jpg";
+import Krootabulon from "../../assets/locations/Krootabulon.jpg";
+import Kyles_Teenyverse from "../../assets/locations/Kyles_Teenyverse.jpg";
+import Larva_Aliens_Planet from "../../assets/locations/Larva_Aliens_Planet.jpg";
+import Mega_Gargantuan_Kingdom from "../../assets/locations/Mega_Gargantuan_Kingdom.jpg";
+import Mr_Meeseeks_Box from "../../assets/locations/Mr_Meeseeks_Box.jpg";
+import Pawn_Shop_Planet from "../../assets/locations/Pawn_Shop_Planet.jpg";
+import Pluto from "../../assets/locations/Pluto.jpg";
+import Vindicators_Base from "../../assets/locations/Vindicators_Base.jpg";
+import Zeep_Xanflorps_Miniverse from "../../assets/locations/Zeep_Xanflorps_Miniverse.jpg";
+import Zigerions_Base from "../../assets/locations/Zigerions_Base.jpg";
 
 const locationImages = {
   "Earth (C-137)": Earth_C137Img,
@@ -80,6 +100,27 @@ const locationImages = {
   "Testicle Monster Dimension": Testicle_Monster_Dimension,
   "The Menagerie": The_Managerie,
   "Unity's Planet": Unitys_Planet,
+  Alphabetrium: Alphabetrium,
+  "Earth (D-99)": Earth_D99,
+  "Earth (D716)": Earth_D716,
+  "Earth (D716-B)": Earth_D716B,
+  "Earth (Giant Telepathic Spiders Dimension)":
+    Earth_Giant_Telepathic_Spiders_Dimension,
+  "Earth (K-22)": Earth_K22,
+  "Fantasy World": Fantasy_World,
+  "Gear World": Gear_World,
+  "Hamster in Butt World": Hamster_in_Butt_World,
+  Jerryboree: Jerryboree,
+  Krootabulon: Krootabulon,
+  "Kyle's Teenyverse": Kyles_Teenyverse,
+  "Larva Alien's Planet": Larva_Aliens_Planet,
+  "Mega Gargantuan Kingdom": Mega_Gargantuan_Kingdom,
+  "Mr. Meeseeks Box": Mr_Meeseeks_Box,
+  "Pawn Shop Planet": Pawn_Shop_Planet,
+  Pluto: Pluto,
+  "Vindicator's Base": Vindicators_Base,
+  "Zeep Xanflorp's Miniverse": Zeep_Xanflorps_Miniverse,
+  "Zigerion's Base": Zigerions_Base,
 };
 
 export const getLocationImage = (locationName) => {
