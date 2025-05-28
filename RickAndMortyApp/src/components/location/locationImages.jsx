@@ -99,7 +99,35 @@ import Rickss_Story from "../../assets/locations/Rickss_Story.jpg";
 import Story_Train from "../../assets/locations/Story_Train.jpg";
 import Tickets_Please_Guy_Nightmare from "../../assets/locations/Tickets_Please_Guy_Nightmare.jpg";
 
+import Alien_Acid_Plant from "../../assets/locations/Alien_Acid_Plant.jpg";
+import Avian_Planet from "../../assets/locations/Avian_Planet.jpg";
+import Birdpersons_Consciousness from "../../assets/locations/Birdpersons_Consciousness.jpg";
+import Defiance_Base from "../../assets/locations/Defiance_Base.jpg";
+import Defiances_Ship from "../../assets/locations/Defiances_Ship.jpg";
+import Elemental_Rings from "../../assets/locations/Elemental_Rings.jpg";
+import Ferkus_9 from "../../assets/locations/Ferkus_9.jpg";
+import France from "../../assets/locations/France.jpg";
+import Gaia from "../../assets/locations/Gaia.jpg";
+import Glorzo_Asteroid from "../../assets/locations/Glorzo_Asteroid.jpg";
+import Hell from "../../assets/locations/Hell.jpg";
+import Merged_Universe from "../../assets/locations/Merged_Universe.jpg";
+import Morglutz from "../../assets/locations/Morglutz.jpg";
+import Morty from "../../assets/locations/Morty.jpg";
+import Narnia_Dimension from "../../assets/locations/Narnia_Dimension.jpg";
+import Near_Duplicate_Reality from "../../assets/locations/Near_Duplicate_Reality.jpg";
+import Normal_Size_Bug_Dimension from "../../assets/locations/Normal_Size_Bug_Dimension.jpg";
+import NX5_Planet_Remover from "../../assets/locations/NX-5_Planet_Remover.jpg";
+import Rick_and_two_Crows_Planet from "../../assets/locations/Rick_and_two_Crows_Planet.jpg";
+import Ricks_Consciousness from "../../assets/locations/Ricks_Consciousness.jpg";
+import Ricks_Memories from "../../assets/locations/Ricks_Memories.jpg";
+import Slartivart from "../../assets/locations/Slartivart.jpg";
+import Space from "../../assets/locations/Space.jpg";
+import Space_Tahoe from "../../assets/locations/Space_Tahoe.jpg";
+import The_Ocean from "../../assets/locations/The_Ocean.jpg";
+import Z_Q_P_D from "../../assets/locations/Z._Q._P._D..jpg";
+
 const locationImages = {
+  // Existing entries
   "Earth (C-137)": Earth_C137Img,
   Abadango: AbadangoImg,
   "Citadel of Ricks": Citadel_of_RicksImg,
@@ -202,6 +230,32 @@ const locationImages = {
   "Ricks’s Story": Rickss_Story,
   "Story Train": Story_Train,
   "Tickets Please Guy Nightmare": Tickets_Please_Guy_Nightmare,
+  "Alien Acid Plant": Alien_Acid_Plant,
+  "Avian Planet": Avian_Planet,
+  "Birdperson's Consciousness": Birdpersons_Consciousness,
+  "Defiance's Base": Defiance_Base,
+  "Defiance's Ship": Defiances_Ship,
+  "Elemental Rings": Elemental_Rings,
+  "Ferkus 9": Ferkus_9,
+  France: France,
+  Gaia: Gaia,
+  "Glorzo Asteroid": Glorzo_Asteroid,
+  Hell: Hell,
+  "Merged Universe": Merged_Universe,
+  Morglutz: Morglutz,
+  Morty: Morty,
+  "Narnia Dimension": Narnia_Dimension,
+  "Near-Duplicate Reality": Near_Duplicate_Reality,
+  "Normal Size Bug Dimension": Normal_Size_Bug_Dimension,
+  "NX-5 Planet Remover": NX5_Planet_Remover,
+  "Rick and Two Crows Planet": Rick_and_two_Crows_Planet,
+  "Rick's Consciousness": Ricks_Consciousness,
+  "Rick's Memories": Ricks_Memories,
+  Slartivart: Slartivart,
+  Space: Space,
+  "Space Tahoe": Space_Tahoe,
+  "The Ocean": The_Ocean,
+  "Z. Q. P. D.": Z_Q_P_D,
 };
 
 export const getLocationImage = (locationName) => {
