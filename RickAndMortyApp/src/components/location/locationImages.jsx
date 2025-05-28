@@ -78,6 +78,26 @@ import Plopstar from "../../assets/locations/Plopstar.jpg";
 import Snake_Planet from "../../assets/locations/Snake_Planet.jpg";
 import Snuffles_Dream from "../../assets/locations/Snuffles_Dream.jpg";
 import Trunk_World from "../../assets/locations/Trunk_World.jpg";
+import Draygon from "../../assets/locations/Draygon.jpg";
+import Earth_Fascist_Teddy_Bear_Dimension from "../../assets/locations/Earth_(Fascist_Teddy_Bear_Dimension).jpg";
+import Earth_Tusk_Dimension from "../../assets/locations/Earth_(Tusk_Dimension).jpg";
+import Earth_Wasp_Dimension from "../../assets/locations/Earth_(Wasp_Dimension).jpg";
+import Globaflyn from "../../assets/locations/Globaflyn.jpg";
+import Gorgon_Quadrant from "../../assets/locations/Gorgon_Quadrant.jpg";
+import Gramuflack from "../../assets/locations/Gramuflack.jpg";
+import Heist_Con from "../../assets/locations/Heist-Con.jpg";
+import Heistotron_Base from "../../assets/locations/Heistotron_Base.jpg";
+import Midland_Quasar from "../../assets/locations/Midland_Quasar.jpg";
+import Monogatron_Mothership from "../../assets/locations/Monogatron_Mothership.jpg";
+import Mortys_Story from "../../assets/locations/Mortys_Story.jpg";
+import Mount_Olympus from "../../assets/locations/Mount_Olympus.jpg";
+import Mount_Space_Everest from "../../assets/locations/Mount_Space_Everest.jpg";
+import New_Improved_Galactic_Federation_Quarters from "../../assets/locations/New_Improved_Galactic_Federation_Quarters.jpg";
+import Non_Diegetic_Alternative_Reality from "../../assets/locations/Non-Diegetic_Alternative_Reality.jpg";
+import Plitzvill_Montana from "../../assets/locations/Plitzvill_Montana.jpg";
+import Rickss_Story from "../../assets/locations/Rickss_Story.jpg";
+import Story_Train from "../../assets/locations/Story_Train.jpg";
+import Tickets_Please_Guy_Nightmare from "../../assets/locations/Tickets_Please_Guy_Nightmare.jpg";
 
 const locationImages = {
   "Earth (C-137)": Earth_C137Img,
@@ -92,8 +112,8 @@ const locationImages = {
   "Venzenulon 7": Venzenulon_7Img,
   "Bepis 9": Bepis_9,
   "Cronenberg Earth": Cronenberg_EarthImg,
-  "Bird World": Bird_WorldImg,
   "Giant's Town": Giant_TownImg,
+  "Bird World": Bird_WorldImg,
   "Gromflom Prime": Gromflom_PrimeImg,
   "Mr. Goldenfold's dream": MrGoldenfold_DreamImg,
   "Nuptia 4": Nuptia_4Img,
@@ -161,6 +181,27 @@ const locationImages = {
   "Snake Planet": Snake_Planet,
   "Snuffles' Dream": Snuffles_Dream,
   "Trunk World": Trunk_World,
+  Draygon: Draygon,
+  "Earth (Fascist Teddy Bear Dimension)": Earth_Fascist_Teddy_Bear_Dimension,
+  "Earth (Tusk Dimension)": Earth_Tusk_Dimension,
+  "Earth (Wasp Dimension)": Earth_Wasp_Dimension,
+  Globaflyn: Globaflyn,
+  "Gorgon Quadrant": Gorgon_Quadrant,
+  Gramuflack: Gramuflack,
+  "Heist-Con": Heist_Con,
+  "Heistotron Base": Heistotron_Base,
+  "Midland Quasar": Midland_Quasar,
+  "Monogatron Mothership": Monogatron_Mothership,
+  "Morty’s Story": Mortys_Story,
+  "Mount Olympus": Mount_Olympus,
+  "Mount Space Everest": Mount_Space_Everest,
+  "New Improved Galactic Federation Quarters":
+    New_Improved_Galactic_Federation_Quarters,
+  "Non-Diegetic Alternative Reality": Non_Diegetic_Alternative_Reality,
+  "Plitzville Montana": Plitzvill_Montana,
+  "Ricks’s Story": Rickss_Story,
+  "Story Train": Story_Train,
+  "Tickets Please Guy Nightmare": Tickets_Please_Guy_Nightmare,
 };
 
 export const getLocationImage = (locationName) => {
