@@ -58,6 +58,26 @@ import Pluto from "../../assets/locations/Pluto.jpg";
 import Vindicators_Base from "../../assets/locations/Vindicators_Base.jpg";
 import Zeep_Xanflorps_Miniverse from "../../assets/locations/Zeep_Xanflorps_Miniverse.jpg";
 import Zigerions_Base from "../../assets/locations/Zigerions_Base.jpg";
+import Alien_Day_Spa from "../../assets/locations/Alien_Day_Spa.jpg";
+import Árboles_Mentirosos from "../../assets/locations/Árboles_Mentirosos.jpg";
+import Blips_and_Chitz from "../../assets/locations/Blips_and_Chitz.jpg";
+import Detoxifier from "../../assets/locations/Detoxifier.jpg";
+import Earth_C35 from "../../assets/locations/Earth_(C-35).jpg";
+import Earth_Chair_Dimension from "../../assets/locations/Earth_(Chair_Dimension).jpg";
+import Earth_D716C from "../../assets/locations/Earth_(D716-C).jpg";
+import Earth_Fascist_Dimension from "../../assets/locations/Earth_(Fascist_Dimension).jpg";
+import Earth_Fascist_Shrimp_Dimension from "../../assets/locations/Earth_(Fascist_Shrimp_Dimension).jpg";
+import Earth_J22 from "../../assets/locations/Earth_(J-22).jpg";
+import Earth_Phone_Dimension from "../../assets/locations/Earth_(Phone_Dimension).jpg";
+import Earth_Pizza_Dimension from "../../assets/locations/Earth_(Pizza_Dimension).jpg";
+import Forbodulon_Prime from "../../assets/locations/Forbodulon_Prime.jpg";
+import Froopyland from "../../assets/locations/Froopyland.jpg";
+import Girvonesk from "../../assets/locations/Girvonesk.jpg";
+import Greasy_Grandma_World from "../../assets/locations/Greasy_Grandma_World.jpg";
+import Plopstar from "../../assets/locations/Plopstar.jpg";
+import Snake_Planet from "../../assets/locations/Snake_Planet.jpg";
+import Snuffles_Dream from "../../assets/locations/Snuffles_Dream.jpg";
+import Trunk_World from "../../assets/locations/Trunk_World.jpg";
 
 const locationImages = {
   "Earth (C-137)": Earth_C137Img,
@@ -121,6 +141,26 @@ const locationImages = {
   "Vindicator's Base": Vindicators_Base,
   "Zeep Xanflorp's Miniverse": Zeep_Xanflorps_Miniverse,
   "Zigerion's Base": Zigerions_Base,
+  "Alien Day Spa": Alien_Day_Spa,
+  "Árboles Mentirosos": Árboles_Mentirosos,
+  "Blips and Chitz": Blips_and_Chitz,
+  Detoxifier: Detoxifier,
+  "Earth (C-35)": Earth_C35,
+  "Earth (Chair Dimension)": Earth_Chair_Dimension,
+  "Earth (D716-C)": Earth_D716C,
+  "Earth (Fascist Dimension)": Earth_Fascist_Dimension,
+  "Earth (Fascist Shrimp Dimension)": Earth_Fascist_Shrimp_Dimension,
+  "Earth (J-22)": Earth_J22,
+  "Earth (Phone Dimension)": Earth_Phone_Dimension,
+  "Earth (Pizza Dimension)": Earth_Pizza_Dimension,
+  "Forbodulon Prime": Forbodulon_Prime,
+  Froopyland: Froopyland,
+  Girvonesk: Girvonesk,
+  "Greasy Grandma World": Greasy_Grandma_World,
+  Plopstar: Plopstar,
+  "Snake Planet": Snake_Planet,
+  "Snuffles' Dream": Snuffles_Dream,
+  "Trunk World": Trunk_World,
 };
 
 export const getLocationImage = (locationName) => {
