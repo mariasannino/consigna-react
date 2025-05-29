@@ -150,10 +150,16 @@ export async function fetchSearchFilterLocation(name, pageNum) {
   }
 }
 
-export async function fetchFilteredLocations({ name, type, pageNum }) {
+export async function fetchFilteredLocations({
+  name,
+  type,
+  dimension,
+  pageNum,
+}) {
   let url = `https://rickandmortyapi.com/api/location/?page=${pageNum}`;
   if (name) url += `&name=${name}`;
   if (type) url += `&type=${type}`;
+  if (dimension) url += `&dimension=${dimension}`;
 
   try {
     const response = await fetch(url);

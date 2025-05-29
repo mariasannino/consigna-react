@@ -5,6 +5,8 @@ import Species from "./category/Species";
 import Status from "./category/Status";
 import { useLocation } from "react-router-dom";
 import Type from "./category/type";
+import Dimesnion from "./category/Dimension";
+
 export default function Filters() {
   const location = useLocation();
 
@@ -30,7 +32,8 @@ export default function Filters() {
       <div>
         <div className="filter-container">
           <h1 className="filters-title">Filters</h1>
-          <Type></Type>
+          <Type />
+          <Dimesnion />
         </div>
       </div>
     );

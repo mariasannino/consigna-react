@@ -127,7 +127,6 @@ import The_Ocean from "../../assets/locations/The_Ocean.jpg";
 import Z_Q_P_D from "../../assets/locations/Z._Q._P._D..jpg";
 
 const locationImages = {
-  // Existing entries
   "Earth (C-137)": Earth_C137Img,
   Abadango: AbadangoImg,
   "Citadel of Ricks": Citadel_of_RicksImg,

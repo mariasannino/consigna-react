@@ -1,35 +1,35 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
-  setType,
+  setDimension,
   setLocationPageNum,
   filterLocations,
 } from "../store/locationsSlice";
 import { useCallback } from "react";
 
-function useTypeLogic() {
+function useDimensionLogic() {
   const dispatch = useDispatch();
-  const selected = useSelector((state) => state.locations.type);
-  const dimension = useSelector((state) => state.locations.dimension);
+  const selected = useSelector((state) => state.locations.dimension);
+  const type = useSelector((state) => state.locations.type);
   const searchQuery = useSelector((state) => state.locations.searchQuery);
 
   const handleClick = useCallback(
-    (type) => {
-      const newType = selected === type ? "" : type;
-      dispatch(setType(newType));
+    (dimension) => {
+      const newDimension = selected === dimension ? "" : dimension;
+      dispatch(setDimension(newDimension));
       dispatch(setLocationPageNum(1));
       dispatch(
         filterLocations({
           name: searchQuery,
-          type: newType,
-          dimension,
+          type,
+          dimension: newDimension,
           pageNum: 1,
         })
       );
     },
-    [dispatch, selected, searchQuery, dimension]
+    [dispatch, selected, searchQuery, type]
   );
 
   return { selected, handleClick };
 }
 
-export default useTypeLogic;
+export default useDimensionLogic;

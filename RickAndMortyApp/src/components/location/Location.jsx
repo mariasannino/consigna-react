@@ -12,8 +12,8 @@ const Location = ({ location }) => {
       {imageSrc && (
         <img src={imageSrc} alt={location.name} className="location-image" />
       )}
-      <Info label="Type" value={location.type} />
-      <Info label="Dimension" value={location.dimension} />
+      <Info label=<strong>Type</strong> value={location.type} />
+      <Info label=<strong>Dimension</strong> value={location.dimension} />
     </Link>
   );
 };

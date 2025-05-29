@@ -1,12 +1,12 @@
 .episode-card {
   background-color: #a2a2a2ba;
-  border: 3px solid rgb(16, 186, 110);
+  border: 2px solid rgb(16, 186, 110);
   border-radius: 5%;
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease-in-out;
 }
 
 .episode-card:hover {
@@ -30,11 +30,11 @@
   text-align: center;
   border: 3px solid rgb(16, 186, 110);
   background-color: #8ff1b7;
-  border-radius: 50%;
+  border-radius: 20px;
 }
 
 .title-container h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   color: rgb(16, 186, 110);
   margin-bottom: 1rem;
 }
@@ -42,20 +42,26 @@
 .title-container p {
   font-size: 2rem;
   margin: 0.5rem 0;
-  color: grey;
+  color: #333;
 }
 
-strong {
+.title-container strong {
   color: #2c7249;
 }
 
 .loading {
   display: flex;
+  justify-content: center;
   font-size: 2rem;
   padding: 2rem;
   color: #2c7249;
 }
 
-img {
-  height: 15rem;
+.episode-card strong {
+  color: #2c7249;
+}
+
+.episode-card img {
+  border-radius: 5%;
+  height: 25rem;
 }

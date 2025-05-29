@@ -35,10 +35,11 @@ export const searchLocations = createAsyncThunk(
 
 export const filterLocations = createAsyncThunk(
   "locations/filterLocations",
-  async ({ name, type, pageNum }) => {
+  async ({ name, type, dimension, pageNum }) => {
     const locations = await fetchFilteredLocations({
       name,
       type,
+      dimension,
       pageNum,
     });
     return locations;
@@ -55,6 +56,7 @@ const locationsSlice = createSlice({
     locationCharacters: [],
     searchQuery: "",
     type: "",
+    dimension: "",
   },
   reducers: {
     setLocationPageNum: (state, action) => {
@@ -72,6 +74,10 @@ const locationsSlice = createSlice({
 
     setType: (state, action) => {
       state.type = action.payload;
+    },
+
+    setDimension: (state, action) => {
+      state.dimension = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -104,6 +110,7 @@ export const {
   setSearchQuery,
   clearLocationDetail,
   setType,
+  setDimension,
 } = locationsSlice.actions;
 
 export default locationsSlice;

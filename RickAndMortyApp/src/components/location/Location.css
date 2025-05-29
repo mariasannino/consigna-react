@@ -40,7 +40,7 @@
 }
 
 .title-container p {
-  font-size: 1.6rem;
+  font-size: 2rem;
   margin: 0.5rem 0;
   color: #333;
 }
@@ -57,18 +57,8 @@
   color: #2c7249;
 }
 
-img {
-  height: 15rem;
-}
-
-.badge {
-  display: inline-block;
-  background-color: #10ba6e;
-  color: white;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  font-size: 1.2rem;
-  margin-right: 0.5rem;
+.location-card strong {
+  color: #2c7249;
 }
 
 .location-card img {

@@ -43,6 +43,10 @@ const useSearchLogic = () => {
     context === "locations" ? state.locations.type : ""
   );
 
+  const dimension = useSelector((state) =>
+    context === "locations" ? state.locations.dimension : ""
+  );
+
   const handleSearchInput = (value) => {
     if (context === "characters") {
       dispatch(setCharacterSearchQuery(value));
@@ -63,7 +67,7 @@ const useSearchLogic = () => {
     } else if (context === "locations") {
       dispatch(setLocationSearchQuery(value));
       dispatch(setLocationPageNum(1));
-      dispatch(filterLocations({ name: value, type, pageNum: 1 }));
+      dispatch(filterLocations({ name: value, type, dimension, pageNum: 1 }));
     }
   };
   return { handleSearchInput };

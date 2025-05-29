@@ -72,15 +72,19 @@ const usePagesLogic = () => {
     context === "locations" ? state.locations.type : ""
   );
 
+  const dimension = useSelector((state) =>
+    context === "locations" ? state.locations.dimension : ""
+  );
+
   const hasAnyFilter = useCallback(() => {
     if (context === "characters") {
       return searchQuery.trim() !== "" || status || gender || species;
     } else if (context === "locations") {
-      return searchQuery.trim() !== "" || type;
+      return searchQuery.trim() !== "" || type || dimension;
     } else {
       return searchQuery.trim() !== "";
     }
-  }, [context, searchQuery, status, gender, species, type]);
+  }, [context, searchQuery, status, gender, species, type, dimension]);
 
   const fetchPage = useCallback(() => {
     if (context === "characters") {
@@ -105,7 +109,9 @@ const usePagesLogic = () => {
       }
     } else if (context === "locations") {
       if (hasAnyFilter()) {
-        dispatch(filterLocations({ name: searchQuery, type, pageNum }));
+        dispatch(
+          filterLocations({ name: searchQuery, type, dimension, pageNum })
+        );
       } else {
         dispatch(getLocationByPage(pageNum));
       }
@@ -120,6 +126,7 @@ const usePagesLogic = () => {
     species,
     hasAnyFilter,
     type,
+    dimension,
   ]);
 
   useEffect(() => {
