@@ -11,8 +11,8 @@ const Episode = ({ episode }) => {
       {imageSrc && (
         <img src={imageSrc} alt={episode.name} className="episode-image" />
       )}
-      <Info label=<strong>Air Date</strong> value={episode.air_date} />
-      <Info label=<strong>Code</strong> value={episode.episode} />
+      <Info label={"Air Date"} value={episode.air_date} />
+      <Info label={"Code"} value={episode.episode} />
     </Link>
   );
 };

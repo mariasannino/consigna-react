@@ -2,7 +2,7 @@ import "./Header.css";
 import HeaderBranding from "./HeaderBranding";
 import NavMenu from "./NavBar";
 import Search from "../search/Search";
-import Pages from "../pagination/Pagination";
+import Pagination from "../pagination/Pagination";
 
 export function Header() {
   return (
@@ -11,7 +11,7 @@ export function Header() {
       <NavMenu />
       <div className="header-tools">
         <Search />
-        <Pages />
+        <Pagination />
       </div>
     </header>
   );

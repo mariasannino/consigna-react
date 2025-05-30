@@ -17,7 +17,7 @@ const Character = ({ character }) => {
         <h4 className="alive">{character.status}</h4>
       )}
       {character.status !== "Dead" && character.status !== "Alive" && (
-        <h4 className="unknown">{character.status}</h4>
+        <h4 className="unknown">Unknown</h4>
       )}
     </div>
   );

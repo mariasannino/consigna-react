@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: 0.5fr 2fr;
-  gap: 1rem;
+  gap: 2rem;
   padding: 20px;
   column-gap: 0px;
   column-fill: auto;
@@ -10,7 +10,7 @@
 .episodes-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 2rem;
   padding: 2rem;
 }
 
