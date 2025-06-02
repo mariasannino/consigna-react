@@ -16,6 +16,15 @@ export async function fetchPages(pageNum) {
   return data;
 }
 
+//to fetch a character by its id:
+export async function fetchCharacterById(id) {
+  const response = await fetch(
+    `https://rickandmortyapi.com/api/character/${id}`
+  );
+  const data = await response.json();
+  return data;
+}
+
 //To find in the searchBar by name
 export async function fetchSearchFilter(name, pageNum) {
   try {

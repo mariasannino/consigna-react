@@ -1,7 +1,9 @@
 import "./Character.css";
+import { Link } from "react-router-dom";
+
 const Character = ({ character }) => {
   return (
-    <div className="character-card">
+    <Link to={`/characters/${character.id}`} className="character-card">
       <h2>{character.name}</h2>
       <img src={character.image} alt={character.name} />
 
@@ -19,7 +21,7 @@ const Character = ({ character }) => {
       {character.status !== "Dead" && character.status !== "Alive" && (
         <h4 className="unknown">Unknown</h4>
       )}
-    </div>
+    </Link>
   );
 };
 

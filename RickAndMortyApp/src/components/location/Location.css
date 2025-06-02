@@ -55,3 +55,12 @@
   border-radius: 5%;
   height: 30rem;
 }
+
+.location-card {
+  color: #2c7249;
+}
+
+.location-card p {
+  font-size: 2.9rem;
+  color: #fff;
+}
