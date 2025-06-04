@@ -3,17 +3,18 @@ import { useSelector } from "react-redux";
 import Character from "../character/character";
 import sad from "../../assets/sad.png";
 import NoResult from "../noResult/NoResult";
-
 const Characters = () => {
   const characters = useSelector((state) => state.characters.characters);
 
   if (characters.length === 0) {
     return (
-      <NoResult
-        message="No characters found :("
-        image={sad}
-        alt="sadRickandMorty"
-      />
+      <>
+        <NoResult
+          message="No characters found :("
+          image={sad}
+          alt="sadRickandMorty"
+        />
+      </>
     );
   }
 

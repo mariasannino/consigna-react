@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getEpisodesByPage, searchEpisodes } from "../store/episodesSlice";
 import Episode from "../components/episode/Episode";
 import sad from "../assets/sad.png";
-
+import NoResult from "../components/noResult/NoResult";
 const Episodes = () => {
   const dispatch = useDispatch();
   const { episodes, pageNum, searchQuery } = useSelector(
@@ -20,10 +20,13 @@ const Episodes = () => {
 
   if (episodes.length === 0) {
     return (
-      <div className="no-result">
-        <p>no episodes found :(</p>
-        <img src={sad} alt="sad" />
-      </div>
+      <>
+        <NoResult
+          message="No episodes found found :("
+          image={sad}
+          alt="sadRickandMorty"
+        />
+      </>
     );
   }
 
