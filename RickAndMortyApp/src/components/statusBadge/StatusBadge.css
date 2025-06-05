@@ -1,0 +1,75 @@
+.character-card .alive {
+  top: 12px;
+  font-size: 2.3rem;
+  right: 20px;
+  color: #fff;
+  border: 1px solid rgb(52, 155, 73);
+  position: absolute;
+  padding: 4px 10px;
+  text-align: center;
+  border-radius: 20%;
+  background-color: rgb(52, 155, 73);
+  font-weight: bold;
+}
+
+.character-card .dead {
+  top: 12px;
+  font-size: 2.3rem;
+  right: 20px;
+  color: #fff;
+  border: 1px solid rgb(235, 46, 46);
+  position: absolute;
+  padding: 4px 10px;
+  border-radius: 20%;
+  background-color: rgb(235, 46, 46);
+  font-weight: bold;
+}
+
+.character-card .unknown {
+  top: 12px;
+  font-size: 2.3rem;
+  right: 20px;
+  color: #fff;
+  border: 1px solid rgb(209, 177, 37);
+  position: absolute;
+  padding: 4px 10px;
+  border-radius: 15%;
+  background-color: rgb(209, 177, 37);
+  font-weight: bold;
+}
+
+.char-info-det .dead {
+  font-size: 2.8rem;
+  color: #333;
+  text-align: center;
+  margin: 0 0;
+  border: 1px solid rgb(235, 46, 46);
+  padding: 4px 10px;
+  border-radius: 20%;
+  background-color: rgb(235, 46, 46);
+  font-weight: bold;
+}
+
+.char-info-det .unknown {
+  font-size: 2.8rem;
+  color: #333;
+  text-align: center;
+  margin: 0 0;
+  border: 1px solid rgb(209, 177, 37);
+  padding: 4px 10px;
+  border-radius: 20%;
+  background-color: rgb(209, 177, 37);
+  font-weight: bold;
+}
+
+.char-info-det .alive {
+  font-size: 2.8rem;
+  color: #333;
+  text-align: center;
+  margin: 0 0;
+  border: 1px solid rgb(52, 155, 73);
+  border-radius: 20%;
+  padding: 4px 10px;
+  background-color: rgb(52, 155, 73);
+  font-weight: bold;
+}

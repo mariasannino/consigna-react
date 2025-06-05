@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCharacterById } from "../../services/api";
 import "./Character.css";
+import StatusBadge from "../statusBadge/StatusBadge";
 
 function CharacterDetails() {
   const { id } = useParams();
@@ -28,15 +29,7 @@ function CharacterDetails() {
       <div className="char-info">
         <div className="char-info-det container-status">
           <strong>Status:</strong>
-          {character.status === "Dead" && (
-            <p className="dead">{character.status}</p>
-          )}
-          {character.status === "Alive" && (
-            <p className="alive">{character.status}</p>
-          )}
-          {character.status !== "Dead" && character.status !== "Alive" && (
-            <p className="unknown">Unknown</p>
-          )}
+          <StatusBadge status={character.status} />
         </div>
         <p className="char-info-det">
           <strong>Species:</strong> {character.species}
