@@ -1,12 +1,13 @@
 .character-card {
-  background-color: #c1bababa;
-  border: 3px solid rgb(16, 186, 110);
+  background-color: var(--card-bg);
+  border: 3px solid var(--card-border);
   border-radius: 5%;
   position: relative;
   padding: 1rem;
   text-align: center;
   text-decoration: none;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, background-color 0.3s,
+    border-color 0.3s;
 }
 
 .character-card:hover {
@@ -14,22 +15,19 @@
 }
 
 .character-card h2 {
-  text-decoration: none;
   font-size: 3.3rem;
   padding-top: 20px;
-  color: rgb(16, 186, 110);
+  color: var(--card-title);
   font-weight: bold;
 }
 
 .character-card h3 {
-  text-decoration: none;
   font-weight: 600;
-  color: #fff;
+  color: var(--card-subtitle);
   font-size: 2.9rem;
 }
 
 .character-card h3 span {
-  text-decoration: none;
   font-size: 1.9rem;
   font-weight: 600;
 }
@@ -39,7 +37,6 @@
   height: 30rem;
 }
 
-/* Character Details Page */
 .character-details-container {
   display: flex;
   flex-direction: column;
@@ -48,8 +45,8 @@
   width: 80rem;
   margin: 4rem auto;
   padding: 3rem;
-  background-color: #e0f7ec;
-  border: 4px solid #10ba6e;
+  background-color: var(--details-bg);
+  border: 4px solid var(--details-border);
   border-radius: 5%;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   text-align: center;
@@ -57,7 +54,7 @@
 
 .char-name {
   font-size: 4rem;
-  color: #10ba6e;
+  color: var(--details-border);
   margin-bottom: 1.5rem;
 }
 
@@ -65,14 +62,14 @@
   width: 40rem;
   height: 40rem;
   border-radius: 5%;
-  border: 8px solid #10ba6e;
+  border: 8px solid var(--details-border);
   margin-bottom: 2rem;
   object-fit: cover;
 }
 
 .char-info-det {
   font-size: 2.8rem;
-  color: #333;
+  color: var(--details-text);
   line-height: 1.6;
   text-align: center;
   margin: 1rem 0;
@@ -82,13 +79,6 @@
 .error {
   text-align: center;
   font-size: 2rem;
-  color: #2c7249;
+  color: var(--status-color);
   padding: 2rem;
-}
-
-.container-status {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  gap: 2rem;
 }

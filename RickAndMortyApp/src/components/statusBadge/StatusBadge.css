@@ -73,3 +73,36 @@
   background-color: rgb(52, 155, 73);
   font-weight: bold;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .character-card .alive,
+  .character-card .dead,
+  .character-card .unknown {
+    font-size: 1.6rem;
+    top: 10px;
+    right: 15px;
+  }
+
+  .char-info-det .alive,
+  .char-info-det .dead,
+  .char-info-det .unknown {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-card .alive,
+  .character-card .dead,
+  .character-card .unknown {
+    font-size: 1.4rem;
+    top: 8px;
+    right: 10px;
+  }
+
+  .char-info-det .alive,
+  .char-info-det .dead,
+  .char-info-det .unknown {
+    font-size: 1.6rem;
+  }
+}

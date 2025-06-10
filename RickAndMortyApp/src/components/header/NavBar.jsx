@@ -1,5 +1,5 @@
-const NavBar = () => (
-  <nav className="header-nav">
+const NavBar = ({ isOpen }) => (
+  <nav className={`header-nav ${isOpen ? "active" : ""}`}>
     <ul className="nav-list">
       <li>
         <a href="/">Home</a>

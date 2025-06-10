@@ -3,4 +3,32 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.container-status {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 3000px) {
+  .characters-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 2200px) {
+  .characters-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .characters-container {
+    grid-template-columns: 1fr;
+  }
 }

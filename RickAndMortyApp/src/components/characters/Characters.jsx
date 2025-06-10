@@ -1,6 +1,6 @@
 import "./Characters.css";
 import { useSelector } from "react-redux";
-import Character from "../character/character";
+import Character from "../character/Character";
 import sad from "../../assets/sad.png";
 import NoResult from "../noResult/NoResult";
 const Characters = () => {

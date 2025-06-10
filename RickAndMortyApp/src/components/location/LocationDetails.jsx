@@ -5,7 +5,7 @@ import {
   getLocationDetail,
   clearLocationDetail,
 } from "../../store/locationsSlice";
-import Character from "../character/character";
+import Character from "../character/Character";
 import Info from "../info/Info";
 import "./Location.css";
 

@@ -6,3 +6,16 @@ strong {
   font-size: 2.9rem;
   color: #fff;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .location-card p {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .location-card p {
+    font-size: 1.6rem;
+  }
+}

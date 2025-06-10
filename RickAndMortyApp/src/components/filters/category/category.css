@@ -1,6 +1,6 @@
 .filter {
-  background-color: #78b9e7;
-  border: 3px solid #2196f3;
+  background-color: var(--filter-bg);
+  border: 3px solid var(--filter-border);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -11,14 +11,15 @@
   max-height: 50vh;
   width: 70%;
   overflow-y: auto;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .filter-title {
   font-size: 3rem;
-  color: #1565c0;
+  color: var(--filter-title);
   margin-bottom: 1rem;
   font-weight: 700;
-  border-bottom: 2px solid #1565c0;
+  border-bottom: 2px solid var(--filter-title-border);
   padding-bottom: 0.5rem;
   width: 100%;
   text-align: center;
@@ -29,10 +30,10 @@
   padding: 0.6rem 1.2rem;
   font-size: 2.6rem;
   font-weight: 600;
-  border: 2px solid #2196f3;
+  border: 2px solid var(--filter-border);
   border-radius: 6px;
-  background-color: #bfebea;
-  color: #2196f3;
+  background-color: var(--filter-btn-bg);
+  color: var(--filter-btn-text);
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
@@ -40,13 +41,44 @@
 }
 
 .filter-btn.selected {
-  background-color: #1976d2;
-  color: #ffffff;
+  background-color: var(--filter-btn-selected-bg);
+  color: var(--filter-btn-selected-text);
   font-weight: bold;
 }
 
 .filter-btn:hover {
-  background-color: #3173de;
-  color: #f0f0f0;
-  border: 2px solid #f0f0f0;
+  background-color: var(--filter-btn-hover-bg);
+  color: var(--filter-btn-hover-text);
+  border: 2px solid var(--filter-btn-hover-border);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filter {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .filter-title {
+    font-size: 1.8rem;
+  }
+
+  .filter-btn {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .filter-title {
+    font-size: 1.6rem;
+  }
+
+  .filter-btn {
+    font-size: 1.3rem;
+  }
 }

@@ -24,11 +24,13 @@ const Locations = () => {
 
   if (locations.length === 0) {
     return (
-      <NoResult
-        message="No locations found :("
-        image={sad}
-        alt="sadRickandMorty"
-      />
+      <div className="container">
+        <Filters />
+        <div className="no-result container">
+          <p>{"No locations found :("}</p>
+          <img src={sad} alt={"No results"} />
+        </div>
+      </div>
     );
   }
 

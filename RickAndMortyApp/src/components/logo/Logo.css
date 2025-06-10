@@ -9,6 +9,12 @@
 
 @media (max-width: 768px) {
   .logo {
-    height: 8rem;
+    height: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 4rem;
   }
 }

@@ -1,11 +1,12 @@
 .episode-card {
-  background-color: #c1bababa;
-  border: 2px solid rgb(16, 186, 110);
+  background-color: var(--episode-bg);
+  border: 2px solid var(--episode-border);
   border-radius: 5%;
   text-align: center;
   text-decoration: none;
-  color: inherit;
-  transition: transform 0.2s ease-in-out;
+  color: var(--episode-text);
+  transition: transform 0.2s ease-in-out, background-color 0.3s,
+    border-color 0.3s;
 }
 
 .episode-card:hover {
@@ -14,41 +15,12 @@
 
 .episode-card h2 {
   font-size: 3.3rem;
-  color: rgb(16, 186, 110);
+  color: var(--episode-title);
 }
 
-.title-container {
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  text-align: center;
-  border: 3px solid rgb(16, 186, 110);
-  background-color: #8ff1b7;
-  border-radius: 20px;
-}
-
-.title-container h1 {
-  font-size: 3.5rem;
-  color: rgb(16, 186, 110);
-  margin-bottom: 1rem;
-}
-
-.title-container p {
+.episode-card p {
   font-size: 2.9rem;
-  margin: 0.5rem 0;
-  color: #908b8bf0;
-}
-
-.title-container strong {
-  color: #2c7249;
-}
-
-.loading {
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
-  padding: 2rem;
-  color: #2c7249;
+  color: var(--episode-subtitle);
 }
 
 .episode-card img {
@@ -56,11 +28,54 @@
   height: 30rem;
 }
 
-.episode-card {
-  color: #2c7249;
+.title-container {
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: center;
+  border: 3px solid var(--title-border);
+  background-color: var(--title-bg);
+  border-radius: 20px;
 }
 
-.episode-card p {
+.title-container h1 {
+  font-size: 3.5rem;
+  color: var(--title-border);
+  margin-bottom: 1rem;
+}
+
+.title-container p {
   font-size: 2.9rem;
-  color: #fff;
+  margin: 0.5rem 0;
+  color: var(--title-text);
+}
+
+.title-container strong {
+  color: var(--title-strong);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  padding: 2rem;
+  color: var(--episode-text);
+}
+
+@media (max-width: 480px) {
+  .episode-card img {
+    max-height: 18rem;
+  }
+
+  .title-container {
+    padding: 1.5rem;
+  }
+
+  .title-container h1 {
+    font-size: 2rem;
+  }
+
+  .title-container p {
+    font-size: 1.3rem;
+  }
 }

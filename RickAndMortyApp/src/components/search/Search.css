@@ -45,3 +45,24 @@ button:hover {
   background-color: grey;
   color: #aaa9a9;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  input,
+  button {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    margin-top: 2rem;
+  }
+
+  input,
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}

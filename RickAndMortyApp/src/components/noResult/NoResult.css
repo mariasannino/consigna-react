@@ -25,3 +25,18 @@
 .no-result img:hover {
   transform: scale(1.1);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .no-result p {
+    font-size: 2.2rem;
+    margin-left: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .no-result p {
+    font-size: 1.8rem;
+    margin-left: 0;
+  }
+}
