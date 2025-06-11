@@ -35,8 +35,16 @@
 }
 
 @media (max-width: 480px) {
+  .no-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+  }
+
   .no-result p {
-    font-size: 1.8rem;
-    margin-left: 0;
+    font-size: 1rem;
+    margin-top: 50rem;
   }
 }

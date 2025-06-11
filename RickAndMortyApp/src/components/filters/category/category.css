@@ -70,15 +70,14 @@
 
 @media (max-width: 480px) {
   .filter {
-    width: 95%;
-    padding: 1rem;
+    width: 50%;
   }
 
   .filter-title {
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 
   .filter-btn {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 }

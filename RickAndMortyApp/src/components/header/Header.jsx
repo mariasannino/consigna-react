@@ -5,6 +5,7 @@ import Search from "../search/Search";
 import Pagination from "../pagination/Pagination";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+
 export function Header() {
   const [theme, setTheme] = useState("light");
 
@@ -31,31 +32,25 @@ export function Header() {
     context = "locations-details";
   }
 
-  if (context === "characters") {
-    return (
-      <header className="header">
-        <button
-          onClick={toggleTheme}
-          style={{ position: "absolute", top: 10, right: 90 }}
-        >
-          {theme === "dark" ? "🌞 Light" : "🌙 Dark"}
-        </button>
-        <HeaderBranding />
+  return (
+    <header className="header">
+      <button onClick={toggleTheme} className="theme">
+        {theme === "dark" ? "🌞 Light" : "🌙 Dark"}
+      </button>
+
+      <HeaderBranding />
+      <div className="header-nav">
         <NavBar />
+      </div>
+
+      {context === "characters" && (
         <div className="header-tools">
           <Search />
           <Pagination />
         </div>
-      </header>
-    );
-  } else {
-    return (
-      <header className="header">
-        <HeaderBranding />
-        <NavBar />
-      </header>
-    );
-  }
+      )}
+    </header>
+  );
 }
 
 export default Header;
