@@ -1,4 +1,5 @@
 //to fetch the first page
+import axios from "axios";
 export async function fetchCharacters() {
   const response = await fetch(
     "https://rickandmortyapi.com/api/character?page=1"
@@ -16,13 +17,13 @@ export async function fetchPages(pageNum) {
   return data;
 }
 
-//to fetch a character by its id:
+//to fetch a character by its id using AXIOS:
+
 export async function fetchCharacterById(id) {
-  const response = await fetch(
+  const response = await axios.get(
     `https://rickandmortyapi.com/api/character/${id}`
   );
-  const data = await response.json();
-  return data;
+  return response.data;
 }
 
 //To find in the searchBar by name

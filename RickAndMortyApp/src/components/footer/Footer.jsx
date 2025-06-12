@@ -9,7 +9,7 @@ function Footer() {
 
       <div className="footer-social">
         <a
-          href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fes%2Elinkedin%2Ecom%2Fin%2Fmariasanninomezquita"
+          href="https://www.linkedin.com/in/mariasanninomezquita"
           target="_blank"
           rel="noopener noreferrer"
         >

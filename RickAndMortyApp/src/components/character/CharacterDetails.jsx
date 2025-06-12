@@ -1,6 +1,6 @@
+import { fetchCharacterById } from "../../services/api";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchCharacterById } from "../../services/api";
 import "./Character.css";
 import StatusBadge from "../statusBadge/StatusBadge";
 
@@ -11,9 +11,15 @@ function CharacterDetails() {
 
   useEffect(() => {
     async function loadCharacter() {
-      const data = await fetchCharacterById(id);
-      setCharacter(data);
-      setLoading(false);
+      try {
+        const data = await fetchCharacterById(id);
+        setCharacter(data);
+      } catch (error) {
+        console.error("Error fetching character:", error);
+        setCharacter(null);
+      } finally {
+        setLoading(false);
+      }
     }
 
     loadCharacter();
