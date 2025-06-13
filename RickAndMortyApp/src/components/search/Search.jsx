@@ -10,7 +10,6 @@ function Search() {
   const handleChange = (e) => {
     const value = e.target.value;
     setInputValue(value);
-    handleSearchInput(value);
   };
 
   return (
@@ -25,7 +24,9 @@ function Search() {
         <button
           onClick={(e) => {
             e.preventDefault();
+            handleSearchInput(inputValue);
           }}
+          type="submit"
         >
           Search
         </button>

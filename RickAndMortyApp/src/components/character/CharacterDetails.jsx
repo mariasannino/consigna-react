@@ -56,7 +56,7 @@ function CharacterDetails() {
           <strong>Episodes:</strong> {character.episode.length}
         </p>
         <p className="char-info-det">
-          <strong>Created:</strong>{" "}
+          <strong>Created:</strong>
           {new Date(character.created).toLocaleDateString()}
         </p>
       </div>

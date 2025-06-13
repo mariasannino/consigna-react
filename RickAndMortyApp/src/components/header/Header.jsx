@@ -13,9 +13,10 @@ export function Header() {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
     document.documentElement.setAttribute("data-theme", savedTheme);
-  }, []);
+  }, []); //save the current theme selected in order that it does not change to light when changing for example the page
 
   const toggleTheme = () => {
+    //to change the theme
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);

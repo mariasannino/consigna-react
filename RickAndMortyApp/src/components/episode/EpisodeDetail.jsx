@@ -5,7 +5,7 @@ import {
   getEpisodeDetail,
   clearEpisodeDetail,
 } from "../../store/episodesSlice";
-import Character from "../character/character";
+import Character from "../character/Character";
 import Info from "../info/Info";
 import "./Episode.css";
 
