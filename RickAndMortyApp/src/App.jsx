@@ -8,10 +8,12 @@ import Home from "./pages/Home";
 import EpisodeDetail from "./components/episode/EpisodeDetail";
 import LocationDetail from "./components/location/LocationDetails";
 import CharacterDetails from "./components/character/CharacterDetails";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
